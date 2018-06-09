@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="HelloApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>Simple Angular Js</title>
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body>
+  <h1> Welcome to Angular world and App </h1>
+  <div ng-controller="HelloController">
+    {{sayHello()}}
+    <br> {{name}}
+    <br>
+    <input type="text" ng-model="name">
+
+    <h3> what is your name {{name}}</h3>
+
+  </div>
+</body>
+
+</html>
