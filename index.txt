@@ -7,4 +7,9 @@ two way binding ( data and share data)
 ng-keyup
 dependency injection use ( inversion of control ) 
 no tight coupling client get call dependency by other not same client ( not responsible for that ) 
-minfication with angular js with 2 method in-line array with function last element and  $inject property 
+minfication with angular js with 2 method in-line array with function last element and  $inject property
+ng-src
+interpolation string 
+
+****************************************Module 1 end********************************************************]
+
