@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Dependancy Injection</title>
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body>
+  <h1> Dependancy Injection </h1>
+  <div ng-app="DIApp"ngStrictDi>
+    <div ng-controller="DIController">
+      <h5>{{userName}}</h5>
+
+        Your Name : -
+        <input type="text" ng-model="userName" ng-blur="upper();">
+    </div>
+</body>
+
+</html>
