@@ -13,12 +13,14 @@
       <h3>{{name}} ?? </h3>      
       <div>
         <button ng-click="feedMe()"> Feed Bunny </button>
+        cost:{{bunCost|currency:"&&"}}
         <hr>
         <button ng-click="noFeedMe()"> No Feed Bunny</button>
         <br>
         <img ng-src="{{needFood}}.jpg">
         <img ng-src="{{noNeedFood}}.jpg">
       </div>
+      <h3> You have message {{Yahoomsg();}}</h3>
     </div>
     </div>
 </body>
