@@ -34,12 +34,12 @@
         }
     }
 
-    // factory Filter 
+    // factory Filter function 
     function LoveFilter() {
         return function (input) {
             input = input || "";
-            input = input.replace("best", "worst");
+            input = input.replace("best","worst");
             return input;
         };
     } 
-})();
+})();0
