@@ -22,7 +22,10 @@
 
     <div ng-controller="HelloSmallController as smallctrl">
       <ol>
-      <li ng-repeat="item in smallctrl.items">{{item.name}} And Quntities are {{item.quntity}} </li>
+      <li ng-repeat="item in smallctrl.items">{{item.name}} And Quntities are {{item.quntity}}
+          <button ng-click="smallctrl.removeItems($index);">Remove Item</button>  
+      </li>
+
     </ol>
   </div>
 

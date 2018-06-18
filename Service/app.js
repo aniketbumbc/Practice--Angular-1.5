@@ -15,7 +15,7 @@
         bigctrl.newItemQunitity = "";
         bigctrl.addList = function () {
             ShooplistService.addList(bigctrl.newItemName, bigctrl.newItemQunitity);
-            console.log("list add" + bigctrl.newItemName+ " and " +bigctrl.newItemQunitity);
+           // console.log("list add" + bigctrl.newItemName+ " and " +bigctrl.newItemQunitity);
              
         }
         
@@ -23,8 +23,11 @@
 
     function HelloSmallController(ShooplistService) {
         var smallctrl = this;
-        console.log("Get List item",ShooplistService.getItems());
-        smallctrl.items = ShooplistService.getItems();     
+       // console.log("Get List item",ShooplistService.getItems());
+        smallctrl.items = ShooplistService.getItems(); 
+        smallctrl.removeItems = function (itemIndex){
+            ShooplistService.removeItem(itemIndex);
+        };
 
     }
 
@@ -41,6 +44,10 @@
         service.getItems = function () {
             return items;
           };
+        service.removeItem = function (itemIndex) {
+            items.pop(itemIndex,1);
+          };
+
     }
 
 })();
