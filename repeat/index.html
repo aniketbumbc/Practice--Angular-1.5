@@ -13,7 +13,12 @@
   <div ng-controller="HelloController">
     <h3>Shopping list</h3>
     <ul>
-      <li ng-repeat="item in shppinglist">{{item}}</li>
+      <li ng-repeat="item in shoppinglist1">{{item}}</li>
+    </ul>
+    <br>
+    <h3>Shopping list with quntity</h3>
+    <ul>
+      <li ng-repeat="item in listObj">{{item.name}} And Quntities are {{item.quntity}}</li>
     </ul>
   </div>
 </body>

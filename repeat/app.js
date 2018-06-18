@@ -25,12 +25,12 @@
         },
     ];
 
-angular.module("MyApp",[]).controller("HelloController",HelloController);
+angular.module("HelloApp",[]).controller("HelloController",HelloController);
 
-HelloController.$inject['$scope'];
+HelloController.$inject = ['$scope'];
 
 function HelloController($scope) { 
-    $scope.list1 = shoppinglist;
+    $scope.shoppinglist1 = shoppinglist;
     $scope.listObj = shoppinglistObj;
  }
 })();
