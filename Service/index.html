@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="HelloApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>Custom Service </title>
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body>
+  <h1> NG repeat and Service Implementation</h1>
+<div ng-controller="HelloBigController as bigctrl">
+  <h3>Shopping list with quntity</h3>
+  <h4> You want add item into list </h4>
+  Item      <input type="text" ng-model="bigctrl.newItemName" placeholder="Item Name"> 
+  Quntities <input type="text" ng-model="bigctrl.newItemQunitity" placeholder="Item count">
+  <button ng-click="bigctrl.addList()">Add to List</button>
+  </div>
+
+    <hr>
+
+    <div ng-controller="HelloSmallController as smallctrl">
+      <ol>
+      <li ng-repeat="item in smallctrl.items">{{$index + 1}} {{item.newItemName}} And Quntities are {{item.newItemQunitity}} </li>
+    </ol>
+  </div>
+
+</body>
+</html>
