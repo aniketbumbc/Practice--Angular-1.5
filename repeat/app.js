@@ -25,6 +25,14 @@
         },
     ];
 
+    var numberstd = [10,15,1,5,3,98,4,3,10,98,54,66,];
+
+    function above10(value) {
+        return value > 10;
+    }
+    var filterarray = numberstd.filter(above10);
+    console.log(filterarray);
+
 angular.module("HelloApp",[]).controller("HelloController",HelloController);
 
 HelloController.$inject = ['$scope'];
