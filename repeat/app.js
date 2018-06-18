@@ -32,5 +32,13 @@ HelloController.$inject = ['$scope'];
 function HelloController($scope) { 
     $scope.shoppinglist1 = shoppinglist;
     $scope.listObj = shoppinglistObj;
- }
+
+    $scope.addList = function () {
+        var newItem = {
+            name : $scope.newItemName,
+            quntity : $scope.newItemQunitity,
+        };
+        $scope.listObj.push(newItem);
+    };
+}
 })();
