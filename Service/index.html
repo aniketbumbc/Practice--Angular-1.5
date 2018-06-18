@@ -15,14 +15,14 @@
   <h4> You want add item into list </h4>
   Item      <input type="text" ng-model="bigctrl.newItemName" placeholder="Item Name"> 
   Quntities <input type="text" ng-model="bigctrl.newItemQunitity" placeholder="Item count">
-  <button ng-click="bigctrl.addList()">Add to List</button>
+  <button ng-click="bigctrl.addList();">Add to List</button>
   </div>
 
     <hr>
 
     <div ng-controller="HelloSmallController as smallctrl">
       <ol>
-      <li ng-repeat="item in smallctrl.items">{{$index + 1}} {{item.newItemName}} And Quntities are {{item.newItemQunitity}} </li>
+      <li ng-repeat="item in smallctrl.items">{{item.name}} And Quntities are {{item.quntity}} </li>
     </ol>
   </div>
 

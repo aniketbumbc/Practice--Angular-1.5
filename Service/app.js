@@ -6,29 +6,32 @@
         .controller("HelloSmallController", HelloSmallController)
         .service('ShooplistService', ShooplistService);
 
-    HelloBigController.$inject = ['$scope', 'ShooplistService'];
-    HelloSmallController.$inject = ['$scope','ShooplistService'];
+    HelloBigController.$inject = ['ShooplistService'];
+    HelloSmallController.$inject = ['ShooplistService'];
 
     function HelloBigController(ShooplistService) {
-        var itemAdder = this;
-        itemAdder.newItemName = "";
-        itemAdder.newItemQunitity = "";
-        itemAdder.addList = function () {
-            ShooplistService.addList(itemAdder.newItemName, itemAdder.newItemQunitity);
-            console.log(addList());
+        var bigctrl = this;
+        bigctrl.newItemName = "";
+        bigctrl.newItemQunitity = "";
+        bigctrl.addList = function () {
+            ShooplistService.addList(bigctrl.newItemName, bigctrl.newItemQunitity);
+            console.log("list add" + bigctrl.newItemName+ " and " +bigctrl.newItemQunitity);
+             
         }
+        
     }
 
     function HelloSmallController(ShooplistService) {
-        var showList = this;
-        //showList.items = ShooplistService.getItems();     
+        var smallctrl = this;
+        console.log("Get List item",ShooplistService.getItems());
+        smallctrl.items = ShooplistService.getItems();     
 
     }
 
     function ShooplistService() {
         var service = this;
         var items = [];
-        service.addList = function (newItemName, newItemQunitity) {
+        service.addList = function(newItemName, newItemQunitity) {
             var item = {
                 name: newItemName,
                 quntity: newItemQunitity
