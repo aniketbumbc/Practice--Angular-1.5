@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="HelloApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>Simple Angular Js</title>
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div ng-controller='ParentCtr as parent'>
+    <h4> The value Parent is </h4>
+    <h4> {{parent.value}}</h4>
+
+  
+  <div ng-controller='ChildCtr as child'>
+    <h4> The value Child is </h4>
+    <h4> {{child.value}}</h4>   
+    <h5>{{parent.value}}</h5>
+  </div> 
+</div>
+</body>
+</html>
