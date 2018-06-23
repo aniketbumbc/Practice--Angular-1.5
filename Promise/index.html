@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="HelloApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>Promise  </title>
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <h1> Promise Implementation </h1>
+  <div ng-controller="ShoppingList as shoplist">
+    <h3>Shopping list From BigController </h3>
+    <input type="text" ng-model="shoplist.newItemName" placeholder="Item Name"> 
+    <input type="text" ng-model="shoplist.newItemQunitity" placeholder="Item count">
+    <button ng-click="shoplist.addList();">Add to List</button>
+    <ol>
+      <li ng-repeat="item in shoplist.items">{{item.name}} And Quntities are {{item.quntity}}</li>
+    </ol>
+  <button ng-click="shoplist.removeItem($index);"> Remove Item</button>
+  </div>
+
+</body>
+</html>
