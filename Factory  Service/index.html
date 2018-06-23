@@ -6,6 +6,7 @@
   <title>Custom Service </title>
   <script src="angular.min.js"></script>
   <script src="app.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -18,7 +19,9 @@
   <ol>
     <li ng-repeat="item in bigctrl.items">{{item.name}} And Quntities are {{item.quntity}}</li>
   </ol>
-  <div class ="error">Error: {{bigctrl.errrorMessage}}</div>
+  
+
+  <div ng-hide="!smallctrl.errorMessage" class="error">Error: {{smallctrl.errorMessage}} </div>
   </div>
 
     <hr>
@@ -32,7 +35,8 @@
       <ol>
         <li ng-repeat="item in smallctrl.items">{{item.name}} And Quntities are {{item.quntity}}</li>
       </ol>
-      <div class ="error">Error: {{smallctrl.errorMessage}}</div>
+      <div ng-if="smallctrl.errorMessage" class="error">Error: {{smallctrl.errorMessage}} </div>
+      <div ng-show="smallctrl.errorMessage" class="error">Error: {{smallctrl.errorMessage}} </div>
   </div>
 
 </body>
