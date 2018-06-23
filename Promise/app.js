@@ -58,12 +58,10 @@
         // };
 
         service.addList = function (newItemName, newItemQunitity) {
-            var promise = WeightLossService.checkName(newItemName);
+            var namePromise = WeightLossService.checkName(newItemName);
+            var quntityPromise = WeightLossService.checkQuantity(newItemQunitity);
 
-            promise
-            .then(function (response) {
-                return WeightLossService.checkQuantity(newItemQunitity);
-            })
+          $q.all([namePromise,quntityPromise])
             .then(function (response) {
                 var item = {
                     name: newItemName,
