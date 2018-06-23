@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="HelloApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>Custom Service </title>
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body>
+  <h1> Service Factory Implementation </h1>
+<div ng-controller="HelloBigController as bigctrl">
+  <h3>Shopping list From BigController </h3>
+  Item      <input type="text" ng-model="bigctrl.newItemName" placeholder="Item Name"> 
+  Quntities <input type="text" ng-model="bigctrl.newItemQunitity" placeholder="Item count">
+  <button ng-click="bigctrl.addList();">Add to List</button>
+  <ol>
+    <li ng-repeat="item in bigctrl.items">{{item.name}} And Quntities are {{item.quntity}}</li>
+  </ol>
+  <div class ="error">Error: {{bigctrl.errrorMessage}}</div>
+  </div>
+
+    <hr>
+
+    <div ng-controller="HelloSmallController as smallctrl">
+      <h3>Shopping list From SmallController </h3>
+      <h4>Limited Item allowd 3</h4>
+      Item      <input type="text" ng-model="smallctrl.newItemName" placeholder="Item Name"> 
+      Quntities <input type="text" ng-model="smallctrl.newItemQunitity" placeholder="Item count">
+      <button ng-click="smallctrl.addList();">Add to List</button>
+      <ol>
+        <li ng-repeat="item in smallctrl.items">{{item.name}} And Quntities are {{item.quntity}}</li>
+      </ol>
+      <div class ="error">Error: {{smallctrl.errorMessage}}</div>
+  </div>
+
+</body>
+</html>
