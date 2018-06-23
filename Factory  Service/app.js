@@ -4,7 +4,7 @@
     angular.module("HelloApp", [])
         .controller("HelloBigController", HelloBigController)
         .controller("HelloSmallController", HelloSmallController)
-        .factory("ShooplistFactory",ShooplistFactory);
+        .factory("ShooplistFactory",ShooplistFactoryFn);
 
     HelloBigController.$inject = ['ShooplistFactory'];
     HelloSmallController.$inject = ['ShooplistFactory'];
@@ -50,6 +50,7 @@
         };
     }
 
+    // Factory Service implement
     function ShoppingListS(maxItems) {
         var service = this;
         var items = [];
@@ -73,7 +74,7 @@
           };
     }
 
-    function ShooplistFactory(){
+    function ShooplistFactoryFn(){
         var factory = function(maxItems){
             return new ShoppingListS(maxItems);
         };
