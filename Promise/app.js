@@ -36,25 +36,44 @@
     function ShoppingListService($q,WeightLossService) {
         var service = this;
         var items = [];
-        service.addList = function (newItemName, newItemQunitity) {
+        // service.addList = function (newItemName, newItemQunitity) {
             
+        //     var promise = WeightLossService.checkName(newItemName);
+
+        //     promise.then(function (respones){
+        //         var nextPromise = WeightLossService.checkQuantity(newItemQunitity);
+
+        //         nextPromise.then(function(result){
+        //             var item = {
+        //                 name: newItemName,
+        //                 quntity: newItemQunitity
+        //             };
+        //             items.push(item);
+        //         },function(errorResponse){
+        //             console.log(errorResponse.message);
+        //         });
+        //     },function(errorResponse){
+        //         console.log(errorResponse.message);
+        //     });           
+        // };
+
+        service.addList = function (newItemName, newItemQunitity) {
             var promise = WeightLossService.checkName(newItemName);
 
-            promise.then(function (respones){
-                var nextPromise = WeightLossService.checkQuantity(newItemQunitity);
-
-                nextPromise.then(function(result){
-                    var item = {
-                        name: newItemName,
-                        quntity: newItemQunitity
-                    };
-                    items.push(item);
-                },function(errorResponse){
-                    console.log(errorResponse.message);
-                });
-            },function(errorResponse){
+            promise
+            .then(function (response) {
+                return WeightLossService.checkQuantity(newItemQunitity);
+            })
+            .then(function (response) {
+                var item = {
+                    name: newItemName,
+                    quntity: newItemQunitity
+                };
+                items.push(item);
+            })
+            .catch(function (errorResponse) {
                 console.log(errorResponse.message);
-            });           
+            });
         };
         service.getItems = function () {
             return items;
