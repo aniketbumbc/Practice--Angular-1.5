@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="HelloApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>Promise  </title>
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <h1> Https Implementation using HTTPS service </h1>
+  <div ng-controller="MenuList as menulist">
+    <h3>List of menu list</h3>
+    <ol>
+      <li ng-repeat="item in menulist.items"> ({{ item.short_name }})
+       {{item.name}}</li>
+      </ol>
+  </div>
+</body>
+</html>
