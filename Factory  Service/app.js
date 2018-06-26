@@ -10,14 +10,10 @@
 
     function WholeListFn() {
         var ddo = {
-            templateUrl: listItem.html;
+            templateUrl: './listItemPage.html'
         };
         return ddo;
     }
-
-
-
-
     function ListItem() {
         var ddo = {
             template: '{{item.name}} And Quntities are {{item.quntity}}'

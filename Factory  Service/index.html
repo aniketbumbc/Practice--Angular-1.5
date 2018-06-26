@@ -17,12 +17,8 @@
   Quntities <input type="text" ng-model="bigctrl.newItemQunitity" placeholder="Item count">
   <button ng-click="bigctrl.addList();">Add to List</button>
   <ol>
-    <li ng-repeat="item in bigctrl.items">
-    <list-item></list-item>
-    </li>
+   <whole-list-item ng-repeat="item in bigctrl.items"></whole-list-item>
   </ol>
-  
-
   <div ng-hide="!smallctrl.errorMessage" class="error">Error: {{smallctrl.errorMessage}} </div>
   </div>
 
@@ -35,7 +31,7 @@
       Quntities <input type="text" ng-model="smallctrl.newItemQunitity" placeholder="Item count">
       <button ng-click="smallctrl.addList();">Add to List</button>
       <ol>
-        <li ng-repeat="item in smallctrl.items"><list-item></list-item></li>
+        <whole-list-item  ng-repeat="item in smallctrl.items"></whole-list-item>       
       </ol>
       <div ng-if="smallctrl.errorMessage" class="error">Error: {{smallctrl.errorMessage}} </div>
       <div ng-show="smallctrl.errorMessage" class="error">Error: {{smallctrl.errorMessage}} </div>
