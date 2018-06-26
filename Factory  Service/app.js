@@ -4,7 +4,26 @@
     angular.module("HelloApp", [])
         .controller("HelloBigController", HelloBigController)
         .controller("HelloSmallController", HelloSmallController)
-        .factory("ShooplistFactory",ShooplistFactoryFn);
+        .factory("ShooplistFactory",ShooplistFactoryFn)
+        .directive('listItem',ListItem)
+        .directive('wholeListItem',WholeListFn);
+
+    function WholeListFn() {
+        var ddo = {
+            templateUrl: listItem.html;
+        };
+        return ddo;
+    }
+
+
+
+
+    function ListItem() {
+        var ddo = {
+            template: '{{item.name}} And Quntities are {{item.quntity}}'
+        };
+        return ddo;
+    }
 
     HelloBigController.$inject = ['ShooplistFactory'];
     HelloSmallController.$inject = ['ShooplistFactory'];

@@ -10,14 +10,16 @@
 </head>
 
 <body>
-  <h1> Service Factory Implementation </h1>
+  <h1> Custom Directive Implementation </h1>
 <div ng-controller="HelloBigController as bigctrl">
   <h3>Shopping list From BigController </h3>
   Item      <input type="text" ng-model="bigctrl.newItemName" placeholder="Item Name"> 
   Quntities <input type="text" ng-model="bigctrl.newItemQunitity" placeholder="Item count">
   <button ng-click="bigctrl.addList();">Add to List</button>
   <ol>
-    <li ng-repeat="item in bigctrl.items">{{item.name}} And Quntities are {{item.quntity}}</li>
+    <li ng-repeat="item in bigctrl.items">
+    <list-item></list-item>
+    </li>
   </ol>
   
 
@@ -33,7 +35,7 @@
       Quntities <input type="text" ng-model="smallctrl.newItemQunitity" placeholder="Item count">
       <button ng-click="smallctrl.addList();">Add to List</button>
       <ol>
-        <li ng-repeat="item in smallctrl.items">{{item.name}} And Quntities are {{item.quntity}}</li>
+        <li ng-repeat="item in smallctrl.items"><list-item></list-item></li>
       </ol>
       <div ng-if="smallctrl.errorMessage" class="error">Error: {{smallctrl.errorMessage}} </div>
       <div ng-show="smallctrl.errorMessage" class="error">Error: {{smallctrl.errorMessage}} </div>
