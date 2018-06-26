@@ -10,6 +10,7 @@
 
     function WholeListFn() {
         var ddo = {
+            restrict:'AE', // restrict attribute and element 
             templateUrl: './listItemPage.html'
         };
         return ddo;
