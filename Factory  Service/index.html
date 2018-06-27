@@ -12,12 +12,13 @@
 <body>
   <h1> Custom Directive Implementation </h1>
 <div ng-controller="HelloBigController as bigctrl">
-  <h3>Shopping list From BigController </h3>
+  
   Item      <input type="text" ng-model="bigctrl.newItemName" placeholder="Item Name"> 
   Quntities <input type="text" ng-model="bigctrl.newItemQunitity" placeholder="Item count">
   <button ng-click="bigctrl.addList();">Add to List</button>
+ 
   <ol>
-   <whole-list-item ng-repeat="item in bigctrl.items"></whole-list-item>
+   <whole-list-item ng-repeat="item in bigctrl.items" title="{{ bigctrl.title }}"></whole-list-item>
   </ol>
   <div ng-hide="!smallctrl.errorMessage" class="error">Error: {{smallctrl.errorMessage}} </div>
   </div>

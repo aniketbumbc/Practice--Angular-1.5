@@ -11,7 +11,10 @@
     function WholeListFn() {
         var ddo = {
             restrict:'AE', // restrict attribute and element 
-            templateUrl: './listItemPage.html'
+            templateUrl: './listItemPage.html',
+            // scope: {
+            //     title: '@title'
+            //   }
         };
         return ddo;
     }
@@ -28,6 +31,10 @@
     function HelloBigController(ShooplistFactory) {
         var bigctrl = this;
 
+        var origTilte = 'Shopping list From BigController';
+        //bigctrl.title = origTilte + "("+ bigctrl.items.length + " items )";
+        
+        bigctrl.title = origTilte;
         // use factory to create a service 
         var ShooplistService = ShooplistFactory();
         bigctrl.items = ShooplistService.getItems();
@@ -36,11 +43,13 @@
         bigctrl.newItemQunitity = "";
 
         bigctrl.addList = function () {
-            ShooplistService.addList(bigctrl.newItemName, bigctrl.newItemQunitity);                    
+            ShooplistService.addList(bigctrl.newItemName, bigctrl.newItemQunitity);
+            //bigctrl.title = origTilte + "("+ bigctrl.items.length + "  items ) ";                    
         }
 
         ShooplistService.removeItem = function(itemIndex){
             ShooplistService.removeItem(itemIndex);
+            //bigctrl.title = origTilte + "("+ bigctrl.items.length + " items)";
         }
     }
 
