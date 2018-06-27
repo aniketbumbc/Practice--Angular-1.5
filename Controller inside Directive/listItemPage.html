@@ -1,0 +1,16 @@
+<style>
+    li {
+        color: red;
+        /* bullet color */
+    }
+
+    li span {
+        color: rgb(25, 211, 102);
+        /* text color */
+    }
+</style>
+<h3>{{list.title}}</h3>
+<ol ng-repeat="item in list.items">
+    {{ item.quntity }} of {{ item.name }}
+</ol>
+<div class="error" ng-if="list.manogInlist();"> Warning Mangos Found </div>

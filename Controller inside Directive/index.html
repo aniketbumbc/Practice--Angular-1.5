@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="HelloApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>controller inside directive</title>
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <h1> controller inside directive </h1>
+<div ng-controller="HelloBigController as list">
+  
+  Item      <input type="text" ng-model="list.itemName" placeholder="Item Name"> 
+  Quntities <input type="text" ng-model="list.itemQunitity" placeholder="Item count">
+  <button ng-click="list.addList();">Add to List</button> 
+   <whole-list-item  items = "list.items" title="{{list.title}}"></whole-list-item>    
+  </div>   
+</body>
+</html>
