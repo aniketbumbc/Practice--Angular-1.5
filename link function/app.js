@@ -18,13 +18,14 @@ function ShoppingListDirective() {
     controller: ShoppingListDirectiveController,
     controllerAs: 'list',
     bindToController: true,
-    link:ShoppingListDirectiveLink
+    link:ShoppingListDirectiveLink,
+    transclude:true
   };
 
   return ddo;
 }
 
-
+// Dom manupulation done inside in link function
 function ShoppingListDirectiveLink(scope, element, attrs, controller) {
   console.log("Link scope is: ", scope);
   console.log("Controller instance is: ", controller);
@@ -92,6 +93,7 @@ function ShoppingListController(ShoppingListFactory) {
 
   viewList.items = shoppingList.getItems();
   var origTitle = "Shopping List #1";
+ viewList.warn = "Ohh no Cokkiessss";
   viewList.title = origTitle + " (" + viewList.items.length + " items )";
 
   viewList.itemName = "";
