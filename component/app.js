@@ -1,29 +1,37 @@
 (function () {
 'use strict';
 
-angular.module('ShoppingListDirectiveApp', [])
+angular.module('ShoppingListComponentApp', [])
 .controller('ShoppingListController', ShoppingListController)
 .factory('ShoppingListFactory', ShoppingListFactory)
-.directive('shoppingList', ShoppingListDirective);
+.component('shoppingList',{
+  templateUrl: 'shoppingList.html',
+  controller: ShoppingListComponentController,
+  bindings:{
+    items:'<',
+    myTitle:'@tittle',
+    onRemove:'&'
+  }
+});
 
 
-function ShoppingListDirective() {
-  var ddo = {
-    templateUrl: 'shoppingList.html',
-    scope: {
-      items: '<',
-      myTitle: '@title',
-      onRemove: '&'
-    },
-    controller: ShoppingListDirectiveController,
-    controllerAs: 'list',
-    bindToController: true,
-    link:ShoppingListDirectiveLink,
-    transclude:true
-  };
+// function ShoppingListDirective() {
+//   var ddo = {
+   
+//     scope: {
+//       items: '<',
+//       myTitle: '@title',
+//       onRemove: '&'
+//     },
+//     controller: ShoppingListDirectiveController,
+//     controllerAs: 'list',
+//     bindToController: true,
+//     link:ShoppingListDirectiveLink,
+//     transclude:true
+//   };
 
-  return ddo;
-}
+//   return ddo;
+// }
 
 // Dom manupulation done inside in link function
 function ShoppingListDirectiveLink(scope, element, attrs, controller) {
